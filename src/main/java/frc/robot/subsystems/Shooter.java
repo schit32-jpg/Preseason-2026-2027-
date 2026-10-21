@@ -18,6 +18,7 @@ import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
+private SparkFlex shooterMotorController;
 public class Shooter extends SubsystemBase {
 
   public Shooter() {}
