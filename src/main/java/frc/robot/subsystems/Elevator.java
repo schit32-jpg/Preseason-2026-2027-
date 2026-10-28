@@ -111,8 +111,14 @@ public void stop(){
 }
 
 public void zeroEncoder(){
-    elevatorMotor1.stop = 0.0;
-    
+    stop();
+    relativeEncoder.setPosition(0.0);
+    setpointHeight();
+
+public boolean isAtSetpoint(){
+    return positionControlEnabled && (Math.abs(getPosition() - setpointHeight) < Units.inchesToMeters(1));
+}
+
 
 }
 
