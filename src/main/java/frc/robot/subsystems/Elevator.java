@@ -41,8 +41,8 @@ private SparkFlexConfig leaderConfig
 
 
     leaderConfig.encoder
-        .positionConversion(2 * Math.PI * Units.inchesToMeters(1.75)/5.0);
-        .veloctityConversion((2 * Math.PI * Units.inchesToMeters(1.75)/5.0)/60);
+        .positionConversionFactor(2 * Math.PI * Units.inchesToMeters(1.75)/5.0);
+        .veloctityConversionFactor((2 * Math.PI * Units.inchesToMeters(1.75)/5.0)/60);
 
 
 
@@ -72,11 +72,11 @@ private SparkFlexConfig leaderConfig
 }
 
 getElevatorHeight(){
-    return relativeEncoder.encoderPosition;
+    return relativeEncoder.getPosition;
 }
 
 getElevatorVelocity(){
-    return relativeEncoder.velocity;
+    return relativeEncoder.getVelocity;
 
 }
 
