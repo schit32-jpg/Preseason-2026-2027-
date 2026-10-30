@@ -22,7 +22,6 @@ public class Arm extends SubsystemBase {
   private SparkFlex armMotorController;
   private SparkClosedLoopController armPIDController;
   private RelativeEncoder armEncoder;
-  
   private SparkFlexConfig armConfig = new SparkFlexConfig();
 
   /** Creates a new ExampleSubsystem. */

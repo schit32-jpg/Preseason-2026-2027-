@@ -1,17 +1,5 @@
 package frc.robot.subsystems;
 
-import com.revrobotics.PersistMode;
-import com.revrobotics.RelativeEncoder;
-import com.revrobotics.ResetMode;
-import com.revrobotics.spark.ClosedLoopSlot;
-import com.revrobotics.spark.FeedbackSensor;
-import com.revrobotics.spark.SparkClosedLoopController;
-import com.revrobotics.spark.SparkFlex;
-import com.revrobotics.spark.SparkBase.ControlType;
-import com.revrobotics.spark.SparkLowLevel.MotorType;
-import com.revrobotics.spark.config.SparkFlexConfig;
-import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
-
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
@@ -19,25 +7,24 @@ import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Elevator extends SubsystemBase {
-  public Elevator(elevatorMotor1, elevatorMotor2){
-    private TalonFX elevatorMotor1 = newTalonFX();
-    private TalonFX elevatorMotor2 = newTalonFX();
-    private RelativeEncoder relativeEncoder;
-    private TalonClosedLoopController elevatorController;
-    double setPointHeight = 0.0;
+    private TalonFX elevatorMotorController1;
+    private TalonFX elevatorMotorController2;
+    private TalonFXConfig elevatorConfig = new TalonFXConfig();
+    private double setpointHeight = 0.0;
     boolean positionControlEnabled = false;
 
-public Elevator(){
-    talonFXMotor = new TalonFX(10, MotorType.kBrushless);
-    talonFXMotor = new TalonFX(11, MotorType.kBrushless);
-    elevatorController = elevatorMotor1.getClosedLoopController();
-    relativeEncoder = elevatorMotor1.getEncoder();
 
-private TalonFXConfig leaderConfig
-    idleMode(IdleMode.kBrake);
-    .smartCurrentLimit(40);
-    .voltageCompensation(12);
-    .inverted(true);
+   
+    
+
+public Elevator(){
+    elevatorMotorController1 = new TalonFX(10);
+    elevatorMotorController2 = new TalonFX(11);
+    
+
+   
+
+
 
 
     leaderConfig.encoder
